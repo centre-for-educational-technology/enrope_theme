@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Enrope</title>
+
+
+    <!-- Custom fonts for this template -->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+
+<!-- Navigation -->
+{{ main_menu }}
+
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('{{ base_path ~ directory }}/img/home-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h1>Enrope</h1>
+                    <span class="subheading">ENROPE is an international, cooperative project aiming to provide high-quality qualification and networking structures for junior researchers in the field of language education and plurilingualism. It operates at the interface of language education research and language teaching and encourages researchers as well as educators in foreign language education to develop more plurilingual mind-sets and practices. As part of its aim to foster strong and reflected professional identities, ENROPE will create an Intensive Study Programme (ISP) which will provide junior researchers with opportunities for transborder collaboration and professional qualification. The ISP will consist of three annual training weeks, linked and enhanced through regular online training phases. A versatile Online Platform will be the central hub of the wide and diverse network that ENROPE is going to build up. The platform will offer spaces and tools for international and field-specific collaboration, e.g. an E-Portfolio as a means to engage in meaningful professional self-reflection. A Qualification Handbook will allow for wide adaption and dissemination of the project's key concepts, products and training activities.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+{#<!-- Main Content -->#}
+{#{% block content %}#}
+    {#<div id="main" class="{{ container }}">#}
+        {#{{ page.breadcrumb }}#}
+        {#<div class="row row-offcanvas row-offcanvas-left clearfix">#}
+            {#<main{{ content_attributes }}>#}
+                {#<section class="section">#}
+                    {#<a id="main-content" tabindex="-1"></a>#}
+                    {#{{ page.content }}#}
+                {#</section>#}
+            {#</main>#}
+            {#{% if page.sidebar_first %}#}
+                {#<div{{ sidebar_first_attributes }}>#}
+                    {#<aside class="section" role="complementary">#}
+                        {#{{ page.sidebar_first }}#}
+                    {#</aside>#}
+                {#</div>#}
+            {#{% endif %}#}
+            {#{% if page.sidebar_second %}#}
+                {#<div{{ sidebar_second_attributes }}>#}
+                    {#<aside class="section" role="complementary">#}
+                        {#{{ page.sidebar_second }}#}
+                    {#</aside>#}
+                {#</div>#}
+            {#{% endif %}#}
+        {#</div>#}
+    {#</div>#}
+{#{% endblock %}#}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            {{ page.content }}
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<!-- Footer -->
+{% include '@enrope/parts/footer.html.twig' %}
+
+
+
+</body>
+
+</html>
