@@ -39,4 +39,9 @@ function enrope_form_system_theme_settings_alter(&$form, FormStateInterface $for
 function enrope_preprocess_page(&$variables) {
   $menu = Block::load('enrope_main_menu');
   $variables['main_menu'] = \Drupal::entityTypeManager()->getViewBuilder('block')->view($menu);
+
+  $request = \Drupal::request();
+  $route_match = \Drupal::routeMatch();
+  $page_title = \Drupal::service('title_resolver')->getTitle($request, $route_match->getRouteObject());
+  $variables['current_page_title'] = $page_title;
 }
