@@ -26,14 +26,7 @@
 #}
 <ul{{ attributes.addClass('nav navbar-nav') }}>
 
-    {% if user.hasPermission('administer nodes')  %}
-        <li class="nav-item"><a class="nav-link" href="{{ path('node.add_page') }}">{{ 'Add content'|t }}</a></li>
-    {% endif %}
-    {% if logged_in %}
-        <li class="nav-item"><a class="nav-link" href="{{ path('user.logout.http') }}">{{ 'Logout'|t }}</a></li>
-    {% else %}
-        <li class="nav-item"><a class="nav-link" href="{{ path('user.login.http') }}">{{ 'Login'|t }}</a></li>
-    {% endif %}
+
 
   {{ menus.menu_links(items, attributes, 0, user, logged_in) }}
     {% macro menu_links(items, attributes, menu_level, user, logged_in) %}
@@ -72,7 +65,18 @@
                 {% endif %}
             </li>
         {% endfor %}
+
+      {% if user.hasPermission('administer nodes')  %}
+          <li class="nav-item"><a class="nav-link" href="{{ path('node.add_page') }}">{{ 'Add content'|t }}</a></li>
+      {% endif %}
+      {% if logged_in %}
+          <li class="nav-item"><a class="nav-link" href="{{ path('user.logout.http') }}">{{ 'Logout'|t }}</a></li>
+      {% else %}
+          <li class="nav-item"><a class="nav-link" href="{{ path('user.login.http') }}">{{ 'Login'|t }}</a></li>
+      {% endif %}
     </ul>
+
+
     {% endif %}
 
     {% endmacro %}
