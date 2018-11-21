@@ -136,7 +136,7 @@ img::-moz-selection {
 header.masthead {
   margin-bottom: 50px;
   background: no-repeat center center;
-  background-color: #868e96;
+  background-color: #343a40;
   background-attachment: scroll;
   position: relative;
   -webkit-background-size: cover;
@@ -204,6 +204,13 @@ header.masthead {
       font-size: 55px; }
     header.masthead .post-heading .subheading {
       font-size: 30px; } }
+
+.background {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: 0; }
 
 .post-preview > a {
   color: #212529; }

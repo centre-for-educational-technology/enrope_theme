@@ -20,12 +20,19 @@
 
 <body>
 
+{{ attach_library('enrope/particles') }}
+
+{{ attach_library('enrope/front-js') }}
+
+
+
 <!-- Navigation -->
 {{ main_menu }}
 
 <!-- Page Header -->
-<header class="masthead" style="background-image: url('{{ base_path ~ directory }}/img/home-bg.jpg')">
-    <div class="overlay"></div>
+<header class="masthead">
+    <canvas class="background"></canvas>
+
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">

@@ -29,3 +29,13 @@ color.preview:
     color/preview.js: {}
   dependencies:
     - color/drupal.color
+particles:
+  version: 1.x
+  js:
+    js/particles.min.js: {}
+front-js:
+  version: 1.x
+  js:
+    js/front.js: {}
+  dependencies:
+    - enrope/particles

@@ -3,7 +3,7 @@ header.masthead {
   // TIP: Background images are set within the HTML using inline CSS!
   margin-bottom: 50px;
   background: no-repeat center center;
-  background-color: $gray-600;
+  background-color: $gray-800;
   background-attachment: scroll;
   position: relative;
   @include background-cover;
@@ -81,4 +81,12 @@ header.masthead {
       }
     }
   }
+}
+
+.background {
+  position : absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: 0;
 }
