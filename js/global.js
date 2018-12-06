@@ -47,7 +47,7 @@
             this.previousTop = currentTop;
           });
       }
-    }
-  };
+}
+};
 
 })(jQuery, Drupal);

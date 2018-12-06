@@ -1,9 +1,9 @@
 var particles = Particles.init({
   selector: '.background',
-  color: ['#24cc85', '#6cb6ff', '#80ffff'],
+  color: ['#24cc85', '#96ABFE', '#83CC6A'],
   connectParticles: true,
-  maxParticles: 200,
-  sizeVariations: 6,
+  maxParticles: 150,
+  sizeVariations: 20,
 
   responsive: [
     {
