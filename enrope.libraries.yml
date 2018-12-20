@@ -39,3 +39,8 @@ front-js:
     js/front.js: {}
   dependencies:
     - enrope/particles
+userreport:
+  version: 1.x
+  js:
+    js/userreport.js: {}
+
