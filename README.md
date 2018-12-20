@@ -1,3 +1,5 @@
+![alt text](https://enrope.eu/themes/contrib/enrope/img/enrope.png "ENROPE Project")
+
 ## ENROPE
 
 ENROPE project template for Drupal 8
