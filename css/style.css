@@ -466,4 +466,7 @@ footer {
   .period .timeline-title {
     margin: 0; }
 
+.webform-submission-form legend, .webform-submission-form label {
+  font-size: 1.5rem; }
+
 /*# sourceMappingURL=style.css.map */
