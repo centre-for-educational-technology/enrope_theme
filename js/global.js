@@ -26,10 +26,13 @@
       //primary navigation slide-in effect
       if ($(window).width() > MQL) {
         var headerHeight = $('#mainNav').height();
+
         $(window).on('scroll', {
             previousTop: 0
           },
           function() {
+
+
             var currentTop = $(window).scrollTop();
             //check if user is scrolling up
             if (currentTop < this.previousTop) {
@@ -39,14 +42,36 @@
               } else {
                 $('#mainNav').removeClass('is-visible is-fixed');
               }
+
+              //Set header offset depending on header height
+              var headerFullHeight = $('#mainNav').outerHeight();
+
+              $('#mainNav').css({
+                'top' :  -headerFullHeight + 'px'
+              });
             } else if (currentTop > this.previousTop) {
               //if scrolling down...
               $('#mainNav').removeClass('is-visible');
               if (currentTop > headerHeight && !$('#mainNav').hasClass('is-fixed')) $('#mainNav').addClass('is-fixed');
+
+
             }
             this.previousTop = currentTop;
+
+            //Remove header offset when reached top
+            if ($(window).scrollTop() === 0){
+              $('#mainNav').css({
+                'top' :  '0px'
+              });
+
+            }
+
           });
+
+
       }
+
+
 }
 };
 

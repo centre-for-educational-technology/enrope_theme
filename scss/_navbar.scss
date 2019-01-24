@@ -15,6 +15,9 @@
     text-transform: uppercase;
     color: $gray-800;
   }
+
+
+
   .navbar-nav {
     > li.nav-item {
       > a {
@@ -63,7 +66,6 @@
     &.is-fixed {
       /* when the user scrolls down, we hide the header right above the viewport */
       position: fixed;
-      top: -67px;
       -webkit-transition: -webkit-transform 0.2s;
       -moz-transition: -moz-transform 0.2s;
       transition: transform 0.2s;
