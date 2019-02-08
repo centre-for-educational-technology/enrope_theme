@@ -43,4 +43,9 @@ userreport:
   version: 1.x
   js:
     js/userreport.js: {}
-
+dropbutton:
+  version: 1.x
+  css:
+    component:
+      css/dropbutton.component.css: { weight: 10 }
+      css/dropbutton.css: { weight: -9 }

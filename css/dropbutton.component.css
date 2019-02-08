@@ -1,3 +1,7 @@
+/**
+ * @file
+ * Visual styles for Bartik's dropbutton component.
+ */
 body {
   font-size: 20px;
   color: #212529;
@@ -309,7 +313,7 @@ footer {
       footer #eu-funded {
         height: 50px; } }
 
-.btn {
+.btn, .js .dropbutton-widget {
   font-size: 14px;
   font-weight: 800;
   padding: 15px 25px;
@@ -318,10 +322,10 @@ footer {
   border-radius: 0;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
 
-.btn-primary {
+.btn-primary, .js .dropbutton-widget {
   background-color: #0085A1;
   border-color: #0085A1; }
-  .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+  .btn-primary:hover, .js .dropbutton-widget:hover, .btn-primary:focus, .js .dropbutton-widget:focus, .btn-primary:active, .js .dropbutton-widget:active {
     color: #fff;
     background-color: #00657b !important;
     border-color: #00657b !important; }
@@ -330,152 +334,57 @@ footer {
   font-size: 16px;
   padding: 25px 35px; }
 
-/*==================================
-    TIMELINE
-==================================*/
-/*-- GENERAL STYLES
-------------------------------*/
-.timeline {
-  line-height: 1.4em;
-  list-style: none;
+.js .dropbutton-wrapper .dropbutton-widget {
+  /* This is required to win over specifity of .js td .dropbutton-widget */
+  position: relative;
+  margin-bottom: 20px; }
+
+.js .dropbutton-widget {
+  overflow: hidden;
+  background-image: none; }
+
+.js .dropbutton-widget:hover {
+  border-color: #e4e4e4 #d2d2d2 #b4b4b4 #d2d2d2; }
+
+.js .dropbutton-widget .button {
+  border: none;
   margin: 0;
-  padding: 0;
-  width: 100%; }
-  .timeline h1, .timeline h2, .timeline h3, .timeline h4, .timeline h5, .timeline h6 {
-    line-height: inherit; }
+  padding: 0.32em 1em;
+  background: transparent none;
+  color: inherit; }
 
-/*----- TIMELINE ITEM -----*/
-.timeline-item {
-  padding-left: 40px;
-  position: relative; }
-  .timeline-item:last-child {
-    padding-bottom: 0; }
+.js .dropbutton-multiple .dropbutton-widget .dropbutton-action a {
+  margin-right: 0;
+  border-right: none;
+  padding-right: 2em;
+  /* LTR */ }
 
-/*----- TIMELINE INFO -----*/
-.timeline-info {
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 3px;
-  margin: 0 0 .5em 0;
-  text-transform: uppercase;
-  white-space: nowrap; }
+[dir="rtl"].js .dropbutton-multiple .dropbutton-widget .dropbutton-action a {
+  margin-left: 0; }
 
-/*----- TIMELINE MARKER -----*/
-.timeline-marker {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 15px; }
-  .timeline-marker.yellow:before {
-    background: #ffc107; }
-  .timeline-marker.black:before {
-    background: #000; }
-  .timeline-marker.blue:before {
-    background: #007bff; }
-  .timeline-marker.red:before {
-    background: #dc3545; }
-  .timeline-marker.green:before {
-    background: #28a745; }
-  .timeline-marker.purple:before {
-    background: #6f42c1; }
-  .timeline-marker:before {
-    background: #0085A1;
-    border: 3px solid transparent;
-    border-radius: 100%;
-    content: "";
-    display: block;
-    height: 15px;
-    position: absolute;
-    top: 4px;
-    left: 0;
-    width: 15px;
-    transition: background 0.3s ease-in-out, border 0.3s ease-in-out; }
-  .timeline-marker:after {
-    content: "";
-    width: 3px;
-    background: #CCD5DB;
-    display: block;
-    position: absolute;
-    top: 24px;
-    bottom: 0;
-    left: 6px; }
-  .timeline-item:last-child .timeline-marker:after {
-    content: none; }
+.js .dropbutton .secondary-action {
+  border-top-color: #ccc; }
 
-.timeline-item:not(.period):hover .timeline-marker:before {
-  background: transparent;
-  border: 3px solid #0085A1; }
+.js .dropbutton-toggle button {
+  background-image: none;
+  background-color: inherit; }
 
-.timeline-item:not(.period):hover .timeline-marker.yellow:before {
-  background: transparent;
-  border: 3px solid #ffc107; }
+.js .dropbutton-toggle .dropbutton-arrow:hover {
+  background: none; }
 
-.timeline-item:not(.period):hover .timeline-marker.black:before {
-  background: transparent;
-  border: 3px solid #000; }
+.js .dropbutton a {
+  color: #ffffff;
+  border-bottom: 0 none; }
 
-.timeline-item:not(.period):hover .timeline-marker.blue:before {
-  background: transparent;
-  border: 3px solid #007bff; }
+.js .dropbutton .dropbutton-action:hover,
+.js .dropbutton a:hover {
+  background: none;
+  border-bottom: 0 none; }
 
-.timeline-item:not(.period):hover .timeline-marker.red:before {
-  background: transparent;
-  border: 3px solid #dc3545; }
+.dropbutton-multiple .dropbutton {
+  border-right: none; }
 
-.timeline-item:not(.period):hover .timeline-marker.green:before {
-  background: transparent;
-  border: 3px solid #28a745; }
+.dropbutton-arrow {
+  color: #ffffff; }
 
-.timeline-item:not(.period):hover .timeline-marker.purple:before {
-  background: transparent;
-  border: 3px solid #6f42c1; }
-
-/*----- TIMELINE CONTENT -----*/
-.timeline-content {
-  padding-bottom: 40px; }
-  .timeline-content p:last-child {
-    margin-bottom: 0; }
-
-/*----- TIMELINE PERIOD -----*/
-.period {
-  padding: 0; }
-  .period .timeline-info {
-    display: none; }
-  .period .timeline-marker:before {
-    background: transparent;
-    content: "";
-    width: 15px;
-    height: auto;
-    border: none;
-    border-radius: 0;
-    top: 0;
-    bottom: 30px;
-    position: absolute;
-    border-top: 3px solid #CCD5DB;
-    border-bottom: 3px solid #CCD5DB; }
-  .period .timeline-marker.top:before {
-    border-top: none; }
-  .period .timeline-marker:after {
-    content: "";
-    height: 32px;
-    top: auto; }
-  .period .timeline-content {
-    padding: 40px 0 70px; }
-  .period .timeline-title {
-    margin: 0; }
-
-.webform-submission-form legend, .webform-submission-form label {
-  font-size: 1.5rem; }
-
-.nav-tabs.primary {
-  margin-bottom: 10px; }
-
-.captcha {
-  margin-bottom: 10px; }
-
-#toolbar-bar {
-  padding-top: 93px;
-  background-color: #ffc107; }
-
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=dropbutton.component.css.map */
