@@ -193,3 +193,12 @@
   padding-top: 93px;
   background-color: #ffc107;
 }
+
+
+td.views-field.views-field-group-roles .item-list ul li{
+  margin: 0;
+  padding: 0.2em 0.5em 0.2em 0.5em;
+  width: intrinsic;
+  width: -moz-max-content;
+  width: -webkit-max-content;
+}
