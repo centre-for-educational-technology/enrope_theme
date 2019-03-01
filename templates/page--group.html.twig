@@ -1,0 +1,153 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a group.
+ *
+ * Available variables:
+ * - group: The group entity with limited access to object properties and
+ *   methods. Only "getter" methods (method names starting with "get", "has",
+ *   or "is") and a few common methods such as "id" and "label" are available.
+ *   Calling other methods (such as group.delete) will result in an exception.
+ * - label: The title of the group.
+ * - content: All group items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the
+ *   printing of a given child element.
+ * - url: Direct URL of the current group.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - group: The current template type (also known as a "theming hook").
+ *   - group--[type]: The current group type. For example, if the group is a
+ *     "Classroom" it would result in "group--classroom". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - group--[view_mode]: The View Mode of the group; for example, a
+ *     teaser would result in: "group--teaser", and full: "group--full".
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - content_attributes: Same as attributes, except applied to the main
+ *   content tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ * - view_mode: View mode; for example, "teaser" or "full".
+ * - page: Flag for the full page state. Will be true if view_mode is 'full'.
+ *
+ * @see template_preprocess_group()
+ *
+ * @ingroup themeable
+ */
+#}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>ENROPE</title>
+
+
+
+    <!-- Custom fonts for this template -->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+    <script>
+      window.addEventListener("load", function(){
+        window.cookieconsent.initialise({
+          "palette": {
+            "popup": {
+              "background": "#237afc"
+            },
+            "button": {
+              "background": "#fff",
+              "text": "#237afc"
+            }
+          },
+          "content": {
+            "message": "This website uses cookies to ensure you get the best experience on our website. By continuing to use our website, you",
+            "dismiss": "Agree",
+            "link": "agree to the use of cookies",
+            "href": "https://enrope.eu/privacy-policy"
+          }
+        })});
+    </script>
+</head>
+
+<body>
+
+{{ attach_library('enrope/userreport') }}
+
+<!-- Navigation -->
+{{ main_menu }}
+
+<!-- Page Header -->
+<header class="masthead">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="page-heading">
+                    <h1>{{ current_page_title }}</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{ page.content.enrope_local_tasks }}
+
+
+</header>
+
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 mx-auto">
+            <div{{ attributes }}>
+
+                {{ title_prefix }}
+                {% if not page %}
+                    <h2{{ title_attributes }}>
+                        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+                    </h2>
+                {% endif %}
+                {{ title_suffix }}
+
+
+
+                <div{{ content_attributes }}>
+
+                    {{ page.content|without('enrope_local_tasks') }}
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<hr>
+
+
+<!-- Footer -->
+{% include '@enrope/parts/footer.html.twig' %}
+
+
+</body>
+
+</html>
+
+
+
+

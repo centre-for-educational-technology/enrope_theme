@@ -1,0 +1,29 @@
+{# extends @bootstrap_barrio/layout/block.html.twig
+/**
+ * @file
+ * Theme override for tabs.
+ */
+#}
+{% block content %}
+  {% if content %}
+
+    {% if content['#primary']['group.view'] %}
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
+
+          {{ content }}
+
+        </div>
+      </nav>
+    {% else %}
+      <nav class="tabs" role="navigation" aria-label="{{ 'Tabs'|t }}">
+        {{ content }}
+      </nav>
+    {% endif %}
+
+  {% endif %}
+{% endblock %}
