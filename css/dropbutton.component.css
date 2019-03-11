@@ -205,16 +205,8 @@ header.masthead {
     header.masthead .post-heading .subheading {
       font-size: 30px; } }
 
-header.masthead.group:before {
-  opacity: 0.3;
-  background-image: url("../img/group_default_cover.jpeg");
-  content: ' ';
+header.masthead.group {
   display: block;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
   background-repeat: no-repeat;
   -ms-background-size: cover;
   -o-background-size: cover;
