@@ -1,0 +1,64 @@
+<!-- Header -->
+{% include '@enrope/parts/header.html.twig' %}
+
+<body>
+
+{{ attach_library('enrope/userreport') }}
+
+<!-- Navigation -->
+{{ main_menu }}
+
+<!-- Page Header -->
+<header class="masthead">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="page-heading">
+                    <h1>{{ current_page_title }}</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-10 col-md-10 mx-auto">
+
+            <article{{ attributes.addClass('profile') }}>
+                {% if page.content %}
+
+
+
+                    <div class="jumbotron">
+                        {% if (picture != NULL) %}
+                            <img src="{{ file_url(picture) }}" class="img-thumbnail rounded-circle">
+                        {% else %}
+                            <img src="{{ url('<front>') }}/{{ directory }}/img/user.png" class="img-thumbnail rounded-circle">
+                        {% endif %}
+
+                        <h2 style="margin-top: 15px">{{ firstname}} {{ lastname }}</h2>
+                        <p>
+                            {{ page.content|without('enrope_page_title') }}
+                        </p>
+                    </div>
+
+                {% endif %}
+            </article>
+
+        </div>
+    </div>
+</div>
+
+<hr>
+
+
+<!-- Footer -->
+{% include '@enrope/parts/footer.html.twig' %}
+
+
+</body>
+
+</html>
+

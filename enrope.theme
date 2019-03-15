@@ -7,6 +7,7 @@
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\block\Entity\Block;
+use Drupal\user\Entity\User;
 
 /**
  * Implements hook_form_system_theme_settings_alter() for settings form.
@@ -55,6 +56,39 @@ function enrope_preprocess_page(&$variables) {
   if ($node) {
     $variables['group'] = $node;
   }
+
+
+  if(\Drupal::routeMatch()->getParameter('user')){
+    $user = User::load(\Drupal::currentUser()->id());
+
+
+    $variables['firstname'] = $user->field_first_name->value;
+    $variables['lastname'] = $user->field_last_name->value;
+
+
+
+    if($user->hasField('user_picture'))
+    {
+      if(!empty($user->get('user_picture')->entity)){
+        $variables['picture'] = $user->get('user_picture')->entity->getFileUri();
+      }
+
+    }
+    elseif( $user->hasField('field_user_picture'))
+    {
+      if(!empty($user->get('field_user_picture')->entity)){
+        $variables['picture'] = $user->get('field_user_picture')->entity->getFileUri();
+      }
+
+    }
+
+
+
+
+  }
+
+
+
 }
 
 

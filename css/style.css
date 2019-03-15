@@ -1,7 +1,7 @@
 body {
-  font-size: 20px;
+  font-size: 1em;
   color: #212529;
-  font-family: 'Lora', 'Times New Roman', serif; }
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
 
 p {
   line-height: 1.5;
@@ -192,7 +192,7 @@ header.masthead {
     font-size: 20px;
     font-weight: 300;
     font-style: italic;
-    font-family: 'Lora', 'Times New Roman', serif; }
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
     header.masthead .post-heading .meta a {
       color: #fff; }
   @media only screen and (min-width: 768px) {
@@ -219,9 +219,9 @@ header.masthead.group {
   z-index: 0; }
 
 .subheading-about {
-  font-size: 24px;
+  font-size: 1.2em;
   font-weight: 300;
-  line-height: 1.1;
+  line-height: 1.6;
   display: block;
   margin: 0px 0 34px;
   text-align: left;
@@ -271,11 +271,11 @@ header.masthead.group {
     border-radius: 0;
     background: none;
     box-shadow: none !important;
-    font-family: 'Lora', 'Times New Roman', serif; }
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
     .floating-label-form-group input::-webkit-input-placeholder,
     .floating-label-form-group textarea::-webkit-input-placeholder {
       color: #868e96;
-      font-family: 'Lora', 'Times New Roman', serif; }
+      font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
   .floating-label-form-group label {
     font-size: 0.85em;
     line-height: 1.764705882em;
@@ -314,10 +314,10 @@ footer {
     margin-bottom: 0;
     text-align: center; }
   footer #eu-funded {
-    height: 80px; }
-    @media only screen and (max-width: 768px) {
-      footer #eu-funded {
-        height: 50px; } }
+    height: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block; }
 
 .btn {
   font-size: 14px;
@@ -494,5 +494,36 @@ td.views-field.views-field-group-roles .item-list ul li {
   width: intrinsic;
   width: -moz-max-content;
   width: -webkit-max-content; }
+
+.group-items .profile {
+  float: left; }
+
+article.group-items {
+  margin-top: 30px; }
+
+.profile img {
+  width: 120px;
+  margin-right: 20px; }
+
+.profile {
+  float: left; }
+
+p.group-item {
+  margin: 15px 0; }
+
+.well {
+  display: flex;
+  align-items: center; }
+
+.group-item-teaser .nav-link {
+  padding-left: 0px; }
+
+.profile .jumbotron img {
+  margin-left: auto;
+  margin-right: auto;
+  display: block; }
+
+.profile h2 {
+  text-align: center; }
 
 /*# sourceMappingURL=style.css.map */

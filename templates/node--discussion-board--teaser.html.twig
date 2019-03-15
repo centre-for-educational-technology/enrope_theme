@@ -1,0 +1,24 @@
+<article class="group-items">
+    <div class="well">
+        <div class="profile">
+            {% if (node.Owner.field_user_picture.entity.fileuri != NULL) %}
+                <img src="{{ file_url(node.Owner.field_user_picture.entity.fileuri) }}" class="img-thumbnail rounded-circle">
+            {% else %}
+                <img src="{{ url('<front>') }}/{{ directory }}/img/user.png" class="img-thumbnail rounded-circle">
+            {% endif %}
+
+
+        </div>
+
+        <div class="group-item-teaser">
+            <h4><a href="{{ url  }}">{{ node.label  }}</a></h4>
+            <p class="text-muted group-item"> <a href="{{ path('entity.user.canonical', {'user': node.Owner.uid.value}) }}">{{ node.Owner.field_first_name.value }}</a> – {{ created.content | date("d/m/Y") }}</p>
+            {{ content.links }}
+        </div>
+
+    </div>
+
+</article>
+
+
+

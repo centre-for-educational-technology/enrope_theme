@@ -1,44 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>ENROPE</title>
-
-
-    <!-- Custom fonts for this template -->
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-
-    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
-    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
-    <script>
-      window.addEventListener("load", function(){
-        window.cookieconsent.initialise({
-          "palette": {
-            "popup": {
-              "background": "#237afc"
-            },
-            "button": {
-              "background": "#fff",
-              "text": "#237afc"
-            }
-          },
-          "content": {
-            "message": "This website uses cookies to ensure you get the best experience on our website. By continuing to use our website, you",
-            "dismiss": "Agree",
-            "link": "agree to the use of cookies",
-            "href": "https://enrope.eu/privacy-policy"
-          }
-        })});
-    </script>
-</head>
+<!-- Header -->
+{% include '@enrope/parts/header.html.twig' %}
 
 <body>
 
@@ -102,7 +63,7 @@
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
             <span class="subheading-about">ENROPE is an international, cooperative project aiming to provide high-quality qualification and networking structures for junior researchers in the field of language education and plurilingualism. The project was developed from within the LANGSCAPE network. ENROPE operates at the interface of language education to develop more plurilingual mind-sets and practices. As part of its aim to foster strong and reflected professional identities, ENROPE will create an Intensive Study Programme (ISP) which will provide junior researchers with opportunities for transborder collaboration and professional qualification. The ISP will consist of three annual training weeks, linked and enhanced through regular online training phases. A versatile Online Platform will be the central hub of the wide and diverse network that ENROPE is going to build up. The platform will offer spaces and tools for international and field-specific collaboration, e.g. an E-Portfolio as a means to engage in meaningful professional self-reflection. A Qualification Handbook will allow for wide adaption and dissemination of the project's key concepts, products and training activities.</span>
-          {{ page.content }}
+          {#{{ page.content }}#}
         </div>
     </div>
 </div>

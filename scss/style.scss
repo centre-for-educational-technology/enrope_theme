@@ -202,3 +202,45 @@ td.views-field.views-field-group-roles .item-list ul li{
   width: -moz-max-content;
   width: -webkit-max-content;
 }
+
+.group-items .profile{
+  float: left;
+}
+
+article.group-items{
+  margin-top: 30px;
+}
+
+.profile img{
+  width: 120px;
+  margin-right: 20px;
+}
+
+.profile {
+  float: left;
+}
+
+p.group-item {
+  margin: 15px 0;
+}
+
+.well {
+  display: flex;
+  align-items: center;
+}
+
+.group-item-teaser .nav-link{
+  padding-left: 0px;
+}
+
+
+
+.profile .jumbotron img{
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.profile h2{
+  text-align: center;
+}
