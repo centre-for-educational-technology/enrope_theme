@@ -1,7 +1,9 @@
 <article class="group-items">
     <div class="well">
         <div class="profile">
-            {% if (node.Owner.field_user_picture.entity.fileuri != NULL) %}
+            {% if (node.Owner.user_picture.entity.fileuri != NULL) %}
+                <img src="{{ file_url(node.Owner.user_picture.entity.fileuri) }}" class="img-thumbnail rounded-circle">
+            {% elseif (node.Owner.field_user_picture.entity.fileuri != NULL) %}
                 <img src="{{ file_url(node.Owner.field_user_picture.entity.fileuri) }}" class="img-thumbnail rounded-circle">
             {% else %}
                 <img src="{{ url('<front>') }}/{{ directory }}/img/user.png" class="img-thumbnail rounded-circle">
