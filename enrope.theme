@@ -56,15 +56,9 @@ function enrope_preprocess_page(&$variables) {
   if ($node) {
     $variables['group'] = $node;
   }
-  
-
-}
-
-
-function enrope_preprocess_user(){
-
 
 
 }
+
 
 
