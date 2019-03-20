@@ -8,6 +8,7 @@
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\block\Entity\Block;
 use Drupal\user\Entity\User;
+use Drupal\group\Entity\GroupContent;
 
 /**
  * Implements hook_form_system_theme_settings_alter() for settings form.
@@ -61,4 +62,27 @@ function enrope_preprocess_page(&$variables) {
 }
 
 
+function enrope_preprocess_breadcrumb(&$variables) {
+
+  if(($node = \Drupal::routeMatch()->getParameter('node')) && $variables['breadcrumb']){
+
+    $variables['#cache']['contexts'][] = 'url';
+  }
+
+}
+
+
+//
+//function enrope_preprocess_node(&$variables){
+//
+//
+//  if ($variables['node']->getType() == 'article' && $variables['view_mode'] == 'full') {
+//    foreach (GroupContent::loadByEntity($variables['node']) as $group_content) {
+//
+//      error_log(print_r($group_content->getGroup()->id(), true));
+//    }
+//  }
+//
+//
+//}
 
