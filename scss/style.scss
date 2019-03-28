@@ -244,3 +244,33 @@ p.group-item {
 .profile h2{
   text-align: center;
 }
+
+fieldset.form-type-search{
+  padding-left: 0px;
+}
+
+.list-group-item{
+  border: none;
+}
+
+.search-form{
+  margin-bottom: 40px;
+}
+
+nav .search-form{
+  margin-bottom: 0px;
+}
+
+.container-inline div, .container-inline label {
+  display: flex;
+  flex: 0 0 auto;
+}
+
+.navbar-form {
+  box-sizing: initial;
+}
+
+#search-block-form.form-row{
+  margin-right: 5px;
+  margin-left: 5px;
+}

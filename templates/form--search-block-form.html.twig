@@ -1,0 +1,29 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a 'form' element.
+ *
+ * Available variables:
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+<form{{ attributes.addClass('search-form', 'search-block-form', 'form-row') }}>
+
+      <div class="input-group">
+
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-text1"><i class="fas fa-search text-white" aria-hidden="true"></i></span>
+        </div>
+        <input title="Enter the terms you wish to search for." placeholder="Keywords + Enter" aria-label="Search" data-drupal-selector="edit-keys" type="search" id="edit-keys" name="keys" value="" class="form-search form-control">
+
+
+      </div>
+
+
+</form>
+
+
+
