@@ -16,21 +16,28 @@
  * @see template_preprocess_user()
  */
 #}
+{#<article{{ attributes.addClass('profile') }}>#}
+{#    {% if content %}#}
+{#        {{- content -}}#}
+{#    {% endif %}#}
+{#</article>#}
+
+
 <article{{ attributes.addClass('profile') }}>
-  {% if content %}
+    {% if content %}
 
-    <div class="jumbotron">
-      {% if (user.user_picture.entity.fileuri != NULL) %}
-        <img src="{{ file_url(user.user_picture.entity.fileuri) }}" class="img-thumbnail rounded-circle">
-      {% else %}
-        <img src="{{ url('<front>') }}/{{ directory }}/img/user.png" class="img-thumbnail rounded-circle">
-      {% endif %}
+        <div class="jumbotron">
+            {% if (user.user_picture.entity.fileuri != NULL) %}
+                <img src="{{ file_url(user.user_picture.entity.fileuri) }}" class="img-thumbnail rounded-circle">
+            {% else %}
+                <img src="{{ url('<front>') }}/{{ directory }}/img/user.png" class="img-thumbnail rounded-circle">
+            {% endif %}
 
-      <h2 style="margin-top: 15px">{{ user.field_first_name.value }} {{ user.field_last_name.value }}</h2>
-      <p>
-        {{ content }}
-      </p>
-    </div>
+            <h2 style="margin-top: 15px">{{ user.field_first_name.value }} {{ user.field_last_name.value }}</h2>
+            <p>
+                {{ content }}
+            </p>
+        </div>
 
-  {% endif %}
+    {% endif %}
 </article>

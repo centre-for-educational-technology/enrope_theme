@@ -74,6 +74,11 @@ function enrope_preprocess_breadcrumb(&$variables) {
 
 
 
+function enrope_theme_suggestions_user_alter(array &$suggestions, array $variables) {
+  $view_mode = $variables['elements']['#view_mode'];
+  $suggestions[] = 'user__' . $view_mode;
+}
+
 //
 //function enrope_preprocess_node(&$variables){
 //

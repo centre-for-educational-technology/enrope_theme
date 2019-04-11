@@ -274,3 +274,111 @@ nav .search-form{
   margin-right: 5px;
   margin-left: 5px;
 }
+
+p.username{
+
+  margin: 0px;
+}
+
+.private-message.private-message-full .username{
+  line-height: 0.8;
+}
+
+#thread-members-display-container{
+  margin-bottom: 40px;
+  padding-left: 28px;
+  padding-right: 25px;
+}
+
+#thread-members-display-container label{
+  padding-right: 10px;
+}
+
+.private_message_thread_delete_link_wrapper{
+  margin-bottom: 30px;
+}
+
+
+.private_message_thread_delete_link_wrapper a{
+
+  @extend .btn;
+  background-color: $warning;
+  width: fit-content;
+  color: white;
+  text-decoration: none;
+}
+
+
+
+.private_message_thread_delete_link_wrapper a:hover{
+
+  background-color: darken($warning, 10%);
+}
+
+
+.field--name-private-messages .field__label{
+  @extend h2;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+
+
+.private-message-thread-messages .message {
+  border-radius: 20px 20px 20px 20px;
+  margin: 0 15px 10px;
+  padding: 15px 20px;
+  position: relative;
+  background-color: $gray-300;
+}
+
+
+#private-message-page .private-message-thread-full .field--name-private-messages .private-message{
+  border: 0;
+}
+
+#private-message-page .private-message-thread-full .field--name-private-messages #load-previous-messages-button-wrapper{
+  border: 0;
+}
+
+#load-previous-messages, #load-previous-threads-button{
+  @extend .btn
+}
+
+.private-message-recipients{
+  @extend h3;
+}
+
+#private-message-page .private-message-thread-full .private-message-recipients span, #private-message-page .private-message-thread-full .private-message-recipients article{
+  padding: 0 3px;
+}
+
+.block-private-message-actions-block{
+  margin-bottom: 30px;
+}
+
+.block-private-message-inbox-block{
+
+  border: 0;
+  background-color: lighten($cyan, 40%);
+  border-radius: 20px 20px 20px 20px;
+  padding: 15px 20px;
+  margin-bottom: 85px;
+}
+
+.block-private-message-inbox-block .private-message-thread{
+  border: 0;
+}
+
+
+#private-message-page{
+  border: 0;
+  background-color: $gray-100;
+  border-radius: 20px 20px 20px 20px;
+  padding: 35px 20px;
+  margin-bottom: 85px;
+}
+
+.block-private-message-inbox-block .private-message-thread:hover{
+  background-color: lighten($cyan, 20%);;
+}
