@@ -382,3 +382,7 @@ p.username{
 .block-private-message-inbox-block .private-message-thread:hover{
   background-color: lighten($cyan, 20%);;
 }
+
+.block-private-message-notification-block{
+  margin-right: 20px;
+}

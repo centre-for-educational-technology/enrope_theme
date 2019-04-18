@@ -620,4 +620,7 @@ p.username {
 .block-private-message-inbox-block .private-message-thread:hover {
   background-color: #4cd3e9; }
 
+.block-private-message-notification-block {
+  margin-right: 20px; }
+
 /*# sourceMappingURL=style.css.map */
