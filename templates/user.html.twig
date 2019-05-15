@@ -37,6 +37,62 @@
             <p>
                 {{ content }}
             </p>
+
+
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <h3>{{ (user.field_affiliation.fielddefinition.label) }}</h3>
+                    <p>{{ user.field_affiliation.value }}</p>
+                </li>
+
+                <li class="list-group-item">
+                    <h3>{{ (user.field_languages_spoken.fielddefinition.label) }}</h3>
+
+
+                    {% if user.field_languages_spoken %}
+                        <ul>
+                            {% for key in user.field_languages_spoken %}
+                                <li>{{ kint(key) }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+
+                </li>
+
+                <li class="list-group-item">
+                    <h3>{{ (user.field_research_topic.fielddefinition.label) }}</h3>
+                    <p>{{ user.field_research_topic.value }}</p>
+                </li>
+
+                <li class="list-group-item">
+                    <h3>{{ (user.field_research_interests_fields.fielddefinition.label) }}</h3>
+                    <p>{{ user.field_research_interests_fields.value }}</p>
+                </li>
+
+                <li class="list-group-item">
+                    <h3>{{ (user.field_date_of_beginning_research.fielddefinition.label) }}</h3>
+                    <p>{{ user.field_date_of_beginning_research.value }}</p>
+                </li>
+
+                <li class="list-group-item">
+                    <h3>{{ (user.field_expected_end_date_of_resea.fielddefinition.label) }}</h3>
+                    <p>{{ user.field_expected_end_date_of_resea.value }}</p>
+                </li>
+
+                <li class="list-group-item">
+                    <h3>{{ (user.field_type_of_the_research_proje.fielddefinition.label) }}</h3>
+
+
+                    <p>{{ user.field_type_of_the_research_proje.value }}</p>
+                </li>
+
+                <li class="list-group-item">
+                    <h3>{{ (user.field_strengths.fielddefinition.label) }}</h3>
+                    <p>{{ user.field_strengths.value }}</p>
+                </li>
+
+
+            </ul>
         </div>
 
     {% endif %}
