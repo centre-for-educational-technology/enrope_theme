@@ -531,7 +531,7 @@ p.group-item {
 fieldset.form-type-search {
   padding-left: 0px; }
 
-.list-group-item {
+.list-group-item:not(.user-profile-field) {
   border: none; }
 
 .search-form {
