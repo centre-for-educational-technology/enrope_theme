@@ -35,12 +35,9 @@
   <div class="col-md-12 layout-region layout-region-node-main">
     {{ form|without('advanced', 'actions') }}
   </div>
-
-  {% if 'admin' in user.getroles or 'moderator' in user.getroles  %}
-    <div class="col-md-12 layout-region-node-secondary">
-      {{ form.advanced }}
-    </div>
-  {% endif %}
+  <div class="col-md-12 layout-region-node-secondary">
+    {{ form.advanced }}
+  </div>
 
   <div class="col layout-region-node-footer">
     {{ form.actions }}
