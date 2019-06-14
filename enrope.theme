@@ -15,11 +15,12 @@ use Drupal\Core\Template\Attribute;
  * Implements hook_form_system_theme_settings_alter() for settings form.
  *
  * Replace Barrio setting options with subtheme ones.
- * 
+ *
  * Example on how to alter theme settings form
- * 
+ *
  */
-function enrope_form_system_theme_settings_alter(&$form, FormStateInterface $form_state) {
+function enrope_form_system_theme_settings_alter(&$form, FormStateInterface $form_state)
+{
   $form['components']['navbar']['bootstrap_barrio_navbar_top_background']['#options'] = array(
       'bg-primary' => t('Primary'),
       'bg-secondary' => t('Secondary'),
@@ -39,7 +40,8 @@ function enrope_form_system_theme_settings_alter(&$form, FormStateInterface $for
 }
 
 
-function enrope_preprocess_page(&$variables) {
+function enrope_preprocess_page(&$variables)
+{
   $menu = Block::load('enrope_main_menu');
   $variables['main_menu'] = \Drupal::entityTypeManager()->getViewBuilder('block')->view($menu);
 
@@ -50,48 +52,103 @@ function enrope_preprocess_page(&$variables) {
 
 
   if ($node = \Drupal::request()->attributes->get('node')) {
-    $variables['node'] = 1;
+    $variables['node'] = $node;
   }
 
-  $node = \Drupal::routeMatch()->getParameter('group');
+  $group_node = \Drupal::routeMatch()->getParameter('group');
+  $portfolio_node = \Drupal::routeMatch()->getParameter('e_portfolio');
 
-  if ($node) {
-    $variables['group'] = $node;
+  if ($group_node) {
+    $variables['group'] = $group_node;
   }
+
+
+  //error_log(print_r(\Drupal::routeMatch()->getRouteName(), true));
+
+
 
 
 }
 
 
-function enrope_preprocess_breadcrumb(&$variables) {
+function enrope_preprocess_block(&$variables) {
 
-  if(($node = \Drupal::routeMatch()->getParameter('node')) && $variables['breadcrumb']){
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    $variables['node_type'] = $node->bundle();
+  }
+
+}
+
+
+function enrope_preprocess_breadcrumb(&$variables)
+{
+
+  if (($node = \Drupal::routeMatch()->getParameter('node')) && $variables['breadcrumb']) {
 
     $variables['#cache']['contexts'][] = 'url';
   }
 
 }
 
+function enrope_preprocess_menu_local_tasks(&$data, $route_name) {
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    $data['node_type'] = $node->bundle();
+  }
+}
 
 
-function enrope_theme_suggestions_user_alter(array &$suggestions, array $variables) {
+function enrope_theme_suggestions_user_alter(array &$suggestions, array $variables)
+{
   $view_mode = $variables['elements']['#view_mode'];
   $suggestions[] = 'user__' . $view_mode;
 }
 
 
-
-function enrope_theme_suggestions_alter(array &$suggestions,
-                                             array $variables, $hook) {   if ($hook == 'node_edit_form') {
-  if ($node = \Drupal::routeMatch()->getParameter('node')) {
-    $content_type = $node->bundle();
-  } else {
-    $current_path = \Drupal::service('path.current')->getPath();
-    $path_args = explode('/', $current_path);
-    $content_type = $path_args[3];
+function enrope_theme_suggestions_alter(array &$suggestions, array $variables, $hook)
+{
+  if ($hook == 'node_edit_form') {
+    if ($node = \Drupal::routeMatch()->getParameter('node')) {
+      $content_type = $node->bundle();
+    } else {
+      $current_path = \Drupal::service('path.current')->getPath();
+      $path_args = explode('/', $current_path);
+      $content_type = $path_args[3];
+    }
+    $suggestions[] = 'node_edit_form__' . $content_type;
   }
-  $suggestions[] = 'node_edit_form__' . $content_type;   }
 }
+
+/**
+ * Implements hook_theme_suggestions_page_alter().
+ */
+function enrope_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    $suggestions[] = 'page__' . $node->bundle();
+  }
+}
+
+
+function enrope_preprocess_node(&$variables) {
+
+  // check if this is the right content type where the field exists
+  if ($variables['node']->getType() == 'portfolio_competency' || $variables['node']->getType() == 'portfolio_showcase') {
+    // taxonomy field
+    $field = $variables['node']->get('field_request_peer_expert_feedba')->getString();
+
+
+
+    if($field == false) {
+
+      $variables['content']['comment']['#access'] = FALSE;
+    }
+  }
+
+
+
+}
+
+
+
 
 //
 //function enrope_preprocess_node(&$variables){

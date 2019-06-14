@@ -161,6 +161,8 @@ header.masthead {
   header.masthead .post-heading,
   header.masthead .site-heading {
     padding: 100px 0 100px; }
+  header.masthead .page-heading.e-portfolio {
+    padding: 200px 0 200px; }
   header.masthead .page-heading,
   header.masthead .site-heading {
     text-align: center; }
@@ -322,6 +324,72 @@ footer {
     margin-left: auto;
     margin-right: auto;
     display: block; }
+
+/**
+ * @file
+ * Default style for file module.
+ */
+/* File icons.*/
+.file {
+  padding-left: 20px;
+  /* LTR */
+  display: inline-block;
+  min-height: 26px;
+  background-repeat: no-repeat;
+  background-position: left center;
+  /* LTR */
+  margin-right: 10px; }
+
+[dir="rtl"] .file {
+  padding-left: inherit;
+  padding-right: 20px;
+  background-position: right center; }
+
+.file--general,
+.file--application-octet-stream {
+  background-image: url(../img/icons/obj-svgrepo-com.svg); }
+
+.file--package-x-generic {
+  background-image: url(../img/icons/zip-svgrepo-com.svg); }
+
+.file--x-office-spreadsheet {
+  background-image: url(../img/icons/xls-svgrepo-com.svg); }
+
+.file--x-office-document {
+  background-image: url(../img/icons/doc-svgrepo-com.svg); }
+
+.file--x-office-presentation {
+  background-image: url(../img/icons/ppt-svgrepo-com.svg); }
+
+.file--text-x-script {
+  background-image: url(../img/icons/js-svgrepo-com.svg); }
+
+.file--text-html {
+  background-image: url(../img/icons/html-svgrepo-com.svg); }
+
+.file--text-plain {
+  background-image: url(../img/icons/txt-svgrepo-com.svg); }
+
+.file--application-pdf {
+  background-image: url(../img/icons/pdf-svgrepo-com.svg); }
+
+.file--application-x-executable {
+  background-image: url(../img/icons/bin-svgrepo-com.svg); }
+
+.file--audio {
+  background-image: url(../img/icons/mp3-svgrepo-com.svg); }
+
+.file--video {
+  background-image: url(../img/icons/mpeg-svgrepo-com.svg); }
+
+.file--text {
+  background-image: url(../img/icons/txt-svgrepo-com.svg); }
+
+.file--image {
+  background-image: url(../img/icons/jpg-svgrepo-com.svg); }
+
+.file a {
+  margin-left: 10px; }
 
 .btn, .private_message_thread_delete_link_wrapper a, #load-previous-messages, #load-previous-threads-button {
   font-size: 14px;
@@ -640,5 +708,14 @@ p.username {
 
 .tablesort--desc {
   background-image: url(../../../../core/misc/icons/ffffff/twistie-up.svg); }
+
+.field--type-comment {
+  margin-top: 40px; }
+
+.field--name-field-competences, .field--name-field-showcase, .field--name-field-autobiography {
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  background-color: #e9ecef;
+  border-radius: .3rem; }
 
 /*# sourceMappingURL=style.css.map */

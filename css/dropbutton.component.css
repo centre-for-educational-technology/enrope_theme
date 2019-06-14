@@ -161,6 +161,8 @@ header.masthead {
   header.masthead .post-heading,
   header.masthead .site-heading {
     padding: 100px 0 100px; }
+  header.masthead .page-heading.e-portfolio {
+    padding: 200px 0 200px; }
   header.masthead .page-heading,
   header.masthead .site-heading {
     text-align: center; }

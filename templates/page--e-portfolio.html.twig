@@ -1,0 +1,81 @@
+<!-- Header -->
+{% include '@enrope/parts/header.html.twig' %}
+
+<body>
+
+{{ attach_library('enrope/userreport') }}
+
+{{ attach_library('enrope/group') }}
+
+{% include '@enrope/parts/main_menu.html.twig' %}
+
+<!-- Page Header -->
+
+{{ page.content.enrope_local_tasks }}
+
+<header class="masthead group">
+
+
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="page-heading e-portfolio">
+                    <h1>{{ page['#title'] }}</h1>
+                    <a href="{{ path('entity.user.canonical', {'user': node.getOwnerId}) }}">
+                        <h3>by {{ node.getOwner.field_first_name.value }} {{ node.getOwner.field_last_name.value }}</h3>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</header>
+
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 mx-auto">
+            <div{{ attributes }}>
+
+                {{ title_prefix }}
+                {% if not page %}
+                    <h2{{ title_attributes }}>
+                        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+                    </h2>
+                {% endif %}
+                {{ title_suffix }}
+
+
+
+                <div{{ content_attributes }}>
+
+                    {{ page.content|without('enrope_local_tasks') }}
+                </div>
+
+                <div id="cover_image" style="display: none;">{{ file_url(node.field_image.entity.uri.value) }}</div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<hr>
+
+
+<!-- Footer -->
+{% include '@enrope/parts/footer.html.twig' %}
+
+
+</body>
+
+</html>
+
+
+
+

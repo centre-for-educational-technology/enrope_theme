@@ -6,6 +6,7 @@
 @import "post.scss";
 @import "contact.scss";
 @import "footer.scss";
+@import "file.scss";
 @import "bootstrap-overrides.scss";
 
 
@@ -416,4 +417,15 @@ fieldset.js-form-item label{
 
 .field--label-above .field__label{
   @extend h3;
+}
+
+.field--type-comment{
+  margin-top: 40px;
+}
+
+.field--name-field-competences, .field--name-field-showcase, .field--name-field-autobiography{
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  background-color: #e9ecef;
+  border-radius: .3rem;
 }
