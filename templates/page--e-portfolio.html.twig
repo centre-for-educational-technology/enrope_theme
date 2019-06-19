@@ -24,10 +24,7 @@
             <div class="col-lg-8 col-md-10 mx-auto">
                 <div class="page-heading e-portfolio">
                     <h1>{{ page['#title'] }}</h1>
-                    <a href="{{ path('entity.user.canonical', {'user': node.getOwnerId}) }}">
-                        <h3>by {{ node.getOwner.field_first_name.value }} {{ node.getOwner.field_last_name.value }}</h3>
-                    </a>
-
+                        <h3>by <a href="{{ path('entity.user.canonical', {'user': node.getOwnerId}) }}">{{ node.getOwner.field_first_name.value }} {{ node.getOwner.field_last_name.value }}  </a></h3>
                 </div>
             </div>
         </div>
