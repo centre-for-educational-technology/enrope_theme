@@ -574,8 +574,10 @@ article.group-items {
   margin-top: 30px; }
 
 .profile img {
-  width: 120px;
-  margin-right: 20px; }
+  margin-right: 20px;
+  height: 150px !important;
+  width: 150px;
+  object-fit: cover; }
 
 .profile {
   float: left; }

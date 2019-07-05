@@ -14,7 +14,7 @@
 
         <div class="group-item-teaser">
             <h4><a href="{{ url  }}">{{ node.label  }}</a></h4>
-            <p class="text-muted group-item"> <a href="{{ path('entity.user.canonical', {'user': node.Owner.uid.value}) }}">{{ node.Owner.field_first_name.value }}</a> – {{ created.content | date("d/m/Y") }}</p>
+            <p class="text-muted group-item"> <a href="{{ path('entity.user.canonical', {'user': node.Owner.uid.value}) }}">{{ node.Owner.field_first_name.value }}</a> – {{ node.getCreatedTime|format_date('html_date') }}</p>
             {{ content.links }}
         </div>
 
