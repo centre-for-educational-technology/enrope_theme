@@ -175,12 +175,14 @@
 }
 
 
-
-
-.webform-submission-form legend, .webform-submission-form label{
-
-  font-size: 1.5rem;
+hr.webform-horizontal-rule{
+  border-top: 5px solid rgba(0,0,0,.1);
 }
+
+//.webform-submission-form legend, .webform-submission-form label{
+//
+//  font-size: 1.5rem;
+//}
 
 .nav-tabs.primary{
   margin-bottom: 10px;
