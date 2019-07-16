@@ -433,3 +433,22 @@ fieldset.js-form-item label{
   background-color: #e9ecef;
   border-radius: .3rem;
 }
+
+.image-style-avatar{
+  height: 150px !important;
+  width: 150px;
+  object-fit: cover;
+
+}
+
+.view-group-mem .views-field-field-first-name{
+  @extend h5;
+  margin-bottom: 10px;
+}
+
+
+.view-group-mem  .item-list ul li{
+  margin-top: 10px;
+  padding: 0 0 0;
+
+}
