@@ -452,3 +452,11 @@ fieldset.js-form-item label{
   padding: 0 0 0;
 
 }
+
+nav.e_portfolio{
+  background-color: $yellow;
+}
+
+li.nav-item.active a{
+  color: lighten($teal, 10%) !important;
+}
