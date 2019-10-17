@@ -460,3 +460,17 @@ nav.e_portfolio{
 li.nav-item.active a{
   color: lighten($teal, 10%) !important;
 }
+
+
+.text-formatted.field a{
+  color: $cyan;
+  text-decoration: underline
+}
+
+
+.text-formatted.field a:hover{
+  color: darken($cyan, 10);
+}
+
+
+
