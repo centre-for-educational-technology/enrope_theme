@@ -169,7 +169,7 @@ img::-moz-selection {
 }
 
 .dropdown-item.active, .dropdown-item:active {
-  background-color: #17a2b8;
+  background-color: #343a40;
 }
 
 header.masthead {
