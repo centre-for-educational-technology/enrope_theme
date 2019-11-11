@@ -28,13 +28,17 @@ h6 {
 }
 
 a {
-  color: #212529;
+  color: #0085A1;
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
   transition: all 0.2s;
 }
 a:focus, a:hover {
   color: #0085A1;
+}
+
+nav a {
+  color: #212529;
 }
 
 blockquote {
@@ -197,9 +201,6 @@ header.masthead .post-heading,
 header.masthead .site-heading {
   padding: 100px 0 100px;
 }
-header.masthead .page-heading.e-portfolio {
-  padding: 200px 0 200px;
-}
 header.masthead .page-heading,
 header.masthead .site-heading {
   text-align: center;
@@ -257,7 +258,7 @@ header.masthead .post-heading .meta a {
   }
 }
 
-header.masthead.group {
+header.masthead.group, header.masthead.e-portfolio {
   display: block;
   background-repeat: no-repeat;
   -ms-background-size: cover;
@@ -266,6 +267,10 @@ header.masthead.group {
   -webkit-background-size: cover;
   background-size: cover;
   background-position: center;
+}
+
+header.masthead.e-portfolio {
+  margin-bottom: 0px;
 }
 
 .background {
@@ -906,7 +911,8 @@ p.username {
 }
 
 nav.e_portfolio {
-  background-color: #ffc107;
+  background-color: #868e96;
+  margin-bottom: 30px;
 }
 
 li.nav-item.active a {

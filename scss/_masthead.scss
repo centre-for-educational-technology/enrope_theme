@@ -21,9 +21,6 @@ header.masthead {
   .site-heading {
     padding: 100px 0 100px;
   }
-  .page-heading.e-portfolio{
-    padding: 200px 0 200px;
-  }
   .page-heading,
   .site-heading {
     text-align: center;
@@ -94,6 +91,10 @@ header.masthead.group{
   background-position: center;
 }
 
+header.masthead.e-portfolio{
+  @extend .group;
+  margin-bottom: 0px;
+}
 
 
 .background {
