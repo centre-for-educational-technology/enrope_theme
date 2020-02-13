@@ -436,12 +436,12 @@ fieldset.js-form-item label{
 
 .image-style-avatar{
   height: 150px !important;
-  width: 150px;
+  width: 150px !important;
+  max-width: 150px !important;
   object-fit: cover;
-
 }
 
-.view-group-mem .views-field-field-first-name{
+.views-field-field-first-name{
   @extend h5;
   margin-bottom: 10px;
 }

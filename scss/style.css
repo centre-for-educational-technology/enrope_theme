@@ -21,7 +21,7 @@ fieldset.js-form-item label,
 .private-message-recipients,
 h4,
 h5,
-.views-field-field-first-name,
+.view-group-mem .views-field-field-first-name,
 h6 {
   font-weight: 800;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -524,7 +524,7 @@ footer #eu-funded {
   padding: 0;
   width: 100%;
 }
-.timeline h1, .timeline h2, .timeline .field--name-private-messages .field__label, .field--name-private-messages .timeline .field__label, .timeline h3, .timeline .field--label-above .field__label, .field--label-above .timeline .field__label, .timeline fieldset.js-form-item label, fieldset.js-form-item .timeline label, .timeline .private-message-recipients, .timeline h4, .timeline h5, .timeline .views-field-field-first-name, .timeline h6 {
+.timeline h1, .timeline h2, .timeline .field--name-private-messages .field__label, .field--name-private-messages .timeline .field__label, .timeline h3, .timeline .field--label-above .field__label, .field--label-above .timeline .field__label, .timeline fieldset.js-form-item label, fieldset.js-form-item .timeline label, .timeline .private-message-recipients, .timeline h4, .timeline h5, .timeline .view-group-mem .views-field-field-first-name, .view-group-mem .timeline .views-field-field-first-name, .timeline h6 {
   line-height: inherit;
 }
 
@@ -898,11 +898,10 @@ p.username {
 .image-style-avatar {
   height: 150px !important;
   width: 150px !important;
-  max-width: 150px !important;
   object-fit: cover;
 }
 
-.views-field-field-first-name {
+.view-group-mem .views-field-field-first-name {
   margin-bottom: 10px;
 }
 
