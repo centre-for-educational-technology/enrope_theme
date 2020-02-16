@@ -53,3 +53,10 @@ dropbutton:
     component:
       css/dropbutton.component.css: { weight: 10 }
       css/dropbutton.css: { weight: -9 }
+#noty:
+#  version: 1.x
+#  js:
+#    vendor://needim/noty/lib/noty.js: {}
+#  css:
+#    component:
+#      vendor://needim/noty/lib/noty.css: {}

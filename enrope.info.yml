@@ -8,6 +8,7 @@ base theme: bootstrap_barrio
 libraries:
   - enrope/bootstrap_cdn
   - enrope/global-styling
+#  - enrope/noty
 
 libraries-extend:
   bootstrap_barrio/dropbutton:
