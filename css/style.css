@@ -712,10 +712,15 @@ article.group-items {
 }
 
 .profile img {
-  margin-right: 20px;
-  height: 150px !important;
+  height: 150px;
   width: 150px;
   object-fit: cover;
+  max-width: 150px;
+  max-height: 150px;
+}
+
+article.group-items .profile img {
+  margin-right: 20px;
 }
 
 .profile {
@@ -896,9 +901,9 @@ p.username {
 }
 
 .image-style-avatar {
-  height: 150px !important;
-  width: 150px !important;
-  max-width: 150px !important;
+  height: 100px !important;
+  width: 100px !important;
+  max-width: 100px !important;
   object-fit: cover;
 }
 
@@ -927,6 +932,22 @@ li.nav-item.active a {
 
 .text-formatted.field a:hover {
   color: #117a8b;
+}
+
+.card .card-body .message {
+  padding-left: 80px;
+}
+.card .card-body .message::after {
+  clear: both;
+}
+
+.card .card-body .actions {
+  margin-top: 5px;
+}
+
+.field--name-user-picture {
+  float: left;
+  margin: 0 1em 0 0;
 }
 
 /*# sourceMappingURL=style.css.map */
