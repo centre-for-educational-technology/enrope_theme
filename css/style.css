@@ -970,4 +970,8 @@ li.nav-item.active a {
   margin-bottom: 30px;
 }
 
+td.bg-success a {
+  color: white;
+}
+
 /*# sourceMappingURL=style.css.map */

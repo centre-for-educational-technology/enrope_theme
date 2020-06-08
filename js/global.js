@@ -12,11 +12,11 @@
 
 
       // Floating label headings for the contact form
-      $("body").on("input propertychange", ".floating-label-form-group", function(e) {
+      $("body").on("input propertychange", ".floating-label-form-group", function (e) {
         $(this).toggleClass("floating-label-form-group-with-value", !!$(e.target).val());
-      }).on("focus", ".floating-label-form-group", function() {
+      }).on("focus", ".floating-label-form-group", function () {
         $(this).addClass("floating-label-form-group-with-focus");
-      }).on("blur", ".floating-label-form-group", function() {
+      }).on("blur", ".floating-label-form-group", function () {
         $(this).removeClass("floating-label-form-group-with-focus");
       });
 
@@ -30,7 +30,7 @@
         $(window).on('scroll', {
             previousTop: 0
           },
-          function() {
+          function () {
 
 
             var currentTop = $(window).scrollTop();
@@ -47,7 +47,7 @@
               var headerFullHeight = $('#mainNav').outerHeight();
 
               $('#mainNav').css({
-                'top' :  -headerFullHeight + 'px'
+                'top': -headerFullHeight + 'px'
               });
             } else if (currentTop > this.previousTop) {
               //if scrolling down...
@@ -59,9 +59,9 @@
             this.previousTop = currentTop;
 
             //Remove header offset when reached top
-            if ($(window).scrollTop() === 0){
+            if ($(window).scrollTop() === 0) {
               $('#mainNav').css({
-                'top' :  '0px'
+                'top': '0px'
               });
 
             }
@@ -72,7 +72,8 @@
       }
 
 
-}
-};
+      $('[data-toggle="tooltip"]').tooltip();
+    }
+  };
 
 })(jQuery, Drupal);
