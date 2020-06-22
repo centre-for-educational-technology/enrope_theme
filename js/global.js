@@ -77,6 +77,10 @@
 
       if ($('#edit-status-value').length) {
 
+        if (!($('#edit-status-value').is(':checked'))) {
+          $('#edit-status-value').parent().find('label').text('Not published');
+        }
+
         $('#edit-status-value').change(function () {
           if (this.checked) {
             // do something when checked
