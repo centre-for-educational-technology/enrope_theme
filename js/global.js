@@ -78,14 +78,14 @@
       if ($('#edit-status-value').length) {
 
         if (!($('#edit-status-value').is(':checked'))) {
-          $('#edit-status-value').parent().find('label').text('Not published');
+          $('#edit-status-value').parent().find('label').text('Draft');
         }
 
         $('#edit-status-value').change(function () {
           if (this.checked) {
             $(this).parent().find('label').text('Published');
           } else {
-            $(this).parent().find('label').text('Not published');
+            $(this).parent().find('label').text('Draft');
           }
         });
       }
