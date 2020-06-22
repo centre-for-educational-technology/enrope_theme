@@ -73,6 +73,21 @@
 
 
       $('[data-toggle="tooltip"]').tooltip();
+
+
+      if ($('#edit-status-value').length) {
+
+        $('#edit-status-value').change(function () {
+          if (this.checked) {
+            // do something when checked
+            $(this).parent().find('label').text('Published');
+          } else {
+            $(this).parent().find('label').text('Not published');
+          }
+        });
+      }
+
+
     }
   };
 
