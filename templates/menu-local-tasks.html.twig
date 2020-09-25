@@ -17,7 +17,8 @@
 {% if primary %}
 
   <h2 class="visually-hidden">{{ 'Primary tabs'|t }}</h2>
-  {% if (primary['group.view'] or node_type == 'e_portfolio') %}
+{#{% if (primary['group.view'] or node_type == 'e_portfolio') %}#}
+  {% if (primary['group.view']) %}
     <ul class="navbar-nav">{{ primary }}</ul>
 
   {% else %}

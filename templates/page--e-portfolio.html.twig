@@ -33,9 +33,9 @@
 
 </header>
 
-<div class="p-0">
-  {{ page.content.enrope_local_tasks }}
-</div>
+{#<div class="p-0">#}
+{#  {{ page.content.enrope_local_tasks }}#}
+{#</div>#}
 
 <!-- Main Content -->
 <div class="container">
@@ -54,7 +54,8 @@
 
                 <div{{ content_attributes }}>
 
-                    {{ page.content|without('enrope_local_tasks') }}
+{#                    {{ page.content|without('enrope_local_tasks') }}#}
+                    {{ page.content }}
                 </div>
 
                 <div id="cover_image" style="display: none;">{{ file_url(node.field_image.entity.uri.value) }}</div>

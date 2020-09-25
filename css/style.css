@@ -269,10 +269,6 @@ header.masthead.group, header.masthead.e-portfolio {
   background-position: center;
 }
 
-header.masthead.e-portfolio {
-  margin-bottom: 0px;
-}
-
 .background {
   position: absolute;
   display: block;
