@@ -562,3 +562,22 @@ td.bg-success a{
   transform: translateX(1.5rem); //translateX(0.75rem);
 }
 
+.navbar-dark .active.nav-item a::after {
+  border-bottom: 5px solid $primary;
+  bottom: 0px;
+  content: " ";
+  left: 0;
+  position: absolute;
+  right: 0;
+}
+
+.navbar-dark .active.nav-item {
+  position: relative;
+}
+
+.node-readmore.nav-link{
+  margin-top: 10px;
+  cursor: pointer;
+  @extend .btn;
+  @extend .btn-primary
+}
