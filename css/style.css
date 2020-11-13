@@ -596,9 +596,6 @@ p.group-item {
   display: flex;
   align-items: center; }
 
-.group-item-teaser .nav-link {
-  padding-left: 0px; }
-
 .profile .jumbotron img {
   margin-left: auto;
   margin-right: auto;
@@ -832,5 +829,11 @@ td.bg-success a {
 .node-readmore.nav-link {
   margin-top: 10px;
   cursor: pointer; }
+
+.field--type-enrope-group-join-leave {
+  margin-bottom: 30px; }
+
+.item-list p {
+  margin: 15px 0; }
 
 /*# sourceMappingURL=style.css.map */

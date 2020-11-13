@@ -173,14 +173,6 @@ function enrope_preprocess_image(&$variables)
 }
 
 
-function enrope_preprocess_field__enrope_group_join_leave(&$variables)
-{
-
-  $variables['items'][0]['content']['#prefix'] = '<button class="btn btn-default">';
-  $variables['items'][0]['content']['#suffix'] = '</button>';
-}
-
-
 /**
  * Implements hook_preprocess_node().
  */

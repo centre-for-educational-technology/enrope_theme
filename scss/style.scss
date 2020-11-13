@@ -10,7 +10,6 @@
 @import "bootstrap-overrides.scss";
 
 
-
 /*==================================
     TIMELINE
 ==================================*/
@@ -23,6 +22,7 @@
   margin: 0;
   padding: 0;
   width: 100%;
+
   h1, h2, h3, h4, h5, h6 {
     line-height: inherit;
   }
@@ -33,6 +33,7 @@
 .timeline-item {
   padding-left: 40px;
   position: relative;
+
   &:last-child {
     padding-bottom: 0;
   }
@@ -48,30 +49,40 @@
   text-transform: uppercase;
   white-space: nowrap;
 }
+
 /*----- TIMELINE MARKER -----*/
 
 .timeline-marker {
   position: absolute;
-  top: 0; bottom: 0; left: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
   width: 15px;
+
   &.yellow:before {
     background: $yellow;
   }
+
   &.black:before {
     background: $black;
   }
+
   &.blue:before {
     background: $blue;
   }
+
   &.red:before {
     background: $red;
   }
+
   &.green:before {
     background: $green;
   }
+
   &.purple:before {
     background: $purple;
   }
+
   &:before {
     background: $primary;
     border: 3px solid transparent;
@@ -80,47 +91,59 @@
     display: block;
     height: 15px;
     position: absolute;
-    top: 4px; left: 0;
+    top: 4px;
+    left: 0;
     width: 15px;
     transition: background 0.3s ease-in-out,
     border 0.3s ease-in-out;
   }
+
   &:after {
     content: "";
     width: 3px;
     background: #CCD5DB;
     display: block;
     position: absolute;
-    top: 24px; bottom: 0; left: 6px;
+    top: 24px;
+    bottom: 0;
+    left: 6px;
   }
+
   .timeline-item:last-child &:after {
     content: none;
   }
 }
+
 .timeline-item:not(.period):hover .timeline-marker:before {
   background: transparent;
   border: 3px solid $primary;
 }
+
 .timeline-item:not(.period):hover .timeline-marker.yellow:before {
   background: transparent;
   border: 3px solid $yellow;
 }
+
 .timeline-item:not(.period):hover .timeline-marker.black:before {
   background: transparent;
   border: 3px solid $black;
 }
+
 .timeline-item:not(.period):hover .timeline-marker.blue:before {
   background: transparent;
   border: 3px solid $blue;
 }
+
 .timeline-item:not(.period):hover .timeline-marker.red:before {
   background: transparent;
   border: 3px solid $red;
 }
+
 .timeline-item:not(.period):hover .timeline-marker.green:before {
   background: transparent;
   border: 3px solid $green;
 }
+
 .timeline-item:not(.period):hover .timeline-marker.purple:before {
   background: transparent;
   border: 3px solid $purple;
@@ -130,6 +153,7 @@
 
 .timeline-content {
   padding-bottom: 40px;
+
   p:last-child {
     margin-bottom: 0;
   }
@@ -139,9 +163,11 @@
 
 .period {
   padding: 0;
+
   .timeline-info {
     display: none;
   }
+
   .timeline-marker {
 
     &:before {
@@ -157,26 +183,30 @@
       border-top: 3px solid #CCD5DB;
       border-bottom: 3px solid #CCD5DB;
     }
-    &.top:before{
+
+    &.top:before {
       border-top: none;
     }
+
     &:after {
       content: "";
       height: 32px;
       top: auto;
     }
   }
+
   .timeline-content {
     padding: 40px 0 70px;
   }
+
   .timeline-title {
     margin: 0;
   }
 }
 
 
-hr.webform-horizontal-rule{
-  border-top: 5px solid rgba(0,0,0,.1);
+hr.webform-horizontal-rule {
+  border-top: 5px solid rgba(0, 0, 0, .1);
 }
 
 //.webform-submission-form legend, .webform-submission-form label{
@@ -184,22 +214,22 @@ hr.webform-horizontal-rule{
 //  font-size: 1.5rem;
 //}
 
-.nav-tabs.primary{
+.nav-tabs.primary {
   margin-bottom: 10px;
 }
 
-.captcha{
+.captcha {
   margin-bottom: 10px;
 }
 
-#toolbar-bar{
+#toolbar-bar {
   padding-top: 93px;
   background-color: #ffc107;
   z-index: 1;
 }
 
 
-td.views-field.views-field-group-roles .item-list ul li{
+td.views-field.views-field-group-roles .item-list ul li {
   margin: 0;
   padding: 0.2em 0.5em 0.2em 0.5em;
   width: intrinsic;
@@ -207,15 +237,15 @@ td.views-field.views-field-group-roles .item-list ul li{
   width: -webkit-max-content;
 }
 
-.group-items .profile{
+.group-items .profile {
   float: left;
 }
 
-article.group-items{
+article.group-items {
   margin-top: 30px;
 }
 
-.profile img{
+.profile img {
   height: 150px;
   width: 150px;
   object-fit: cover;
@@ -223,7 +253,7 @@ article.group-items{
   max-height: 150px;
 }
 
-article.group-items .profile img{
+article.group-items .profile img {
   margin-right: 20px;
 }
 
@@ -240,35 +270,30 @@ p.group-item {
   align-items: center;
 }
 
-.group-item-teaser .nav-link{
-  padding-left: 0px;
-}
 
-
-
-.profile .jumbotron img{
+.profile .jumbotron img {
   margin-left: auto;
   margin-right: auto;
   display: block;
 }
 
-.profile h2{
+.profile h2 {
   text-align: center;
 }
 
-fieldset.form-type-search{
+fieldset.form-type-search {
   padding-left: 0px;
 }
 
-.list-group-item:not(.user-profile-field){
+.list-group-item:not(.user-profile-field) {
   border: none;
 }
 
-.search-form{
+.search-form {
   margin-bottom: 40px;
 }
 
-nav .search-form{
+nav .search-form {
   margin-bottom: 0px;
 }
 
@@ -281,36 +306,36 @@ nav .search-form{
   box-sizing: initial;
 }
 
-#search-block-form.form-row{
+#search-block-form.form-row {
   margin-right: 5px;
   margin-left: 5px;
 }
 
-p.username{
+p.username {
 
   margin: 0px;
 }
 
-.private-message.private-message-full .username{
+.private-message.private-message-full .username {
   line-height: 0.8;
 }
 
-#thread-members-display-container{
+#thread-members-display-container {
   margin-bottom: 40px;
   padding-left: 28px;
   padding-right: 25px;
 }
 
-#thread-members-display-container label{
+#thread-members-display-container label {
   padding-right: 10px;
 }
 
-.private_message_thread_delete_link_wrapper{
+.private_message_thread_delete_link_wrapper {
   margin-bottom: 30px;
 }
 
 
-.private_message_thread_delete_link_wrapper a{
+.private_message_thread_delete_link_wrapper a {
 
   @extend .btn;
   background-color: $warning;
@@ -320,19 +345,17 @@ p.username{
 }
 
 
-
-.private_message_thread_delete_link_wrapper a:hover{
+.private_message_thread_delete_link_wrapper a:hover {
 
   background-color: darken($warning, 10%);
 }
 
 
-.field--name-private-messages .field__label{
+.field--name-private-messages .field__label {
   @extend h2;
   margin-bottom: 10px;
   margin-top: 10px;
 }
-
 
 
 .private-message-thread-messages .message {
@@ -344,31 +367,31 @@ p.username{
 }
 
 
-#private-message-page .private-message-thread-full .field--name-private-messages .private-message{
+#private-message-page .private-message-thread-full .field--name-private-messages .private-message {
   border: 0;
 }
 
-#private-message-page .private-message-thread-full .field--name-private-messages #load-previous-messages-button-wrapper{
+#private-message-page .private-message-thread-full .field--name-private-messages #load-previous-messages-button-wrapper {
   border: 0;
 }
 
-#load-previous-messages, #load-previous-threads-button{
+#load-previous-messages, #load-previous-threads-button {
   @extend .btn
 }
 
-.private-message-recipients{
+.private-message-recipients {
   @extend h3;
 }
 
-#private-message-page .private-message-thread-full .private-message-recipients span, #private-message-page .private-message-thread-full .private-message-recipients article{
+#private-message-page .private-message-thread-full .private-message-recipients span, #private-message-page .private-message-thread-full .private-message-recipients article {
   padding: 0 3px;
 }
 
-.block-private-message-actions-block{
+.block-private-message-actions-block {
   margin-bottom: 30px;
 }
 
-.block-private-message-inbox-block{
+.block-private-message-inbox-block {
 
   border: 0;
   background-color: lighten($cyan, 40%);
@@ -377,12 +400,12 @@ p.username{
   margin-bottom: 85px;
 }
 
-.block-private-message-inbox-block .private-message-thread{
+.block-private-message-inbox-block .private-message-thread {
   border: 0;
 }
 
 
-#private-message-page{
+#private-message-page {
   border: 0;
   background-color: $gray-100;
   border-radius: 20px 20px 20px 20px;
@@ -390,14 +413,13 @@ p.username{
   margin-bottom: 85px;
 }
 
-.block-private-message-inbox-block .private-message-thread:hover{
+.block-private-message-inbox-block .private-message-thread:hover {
   background-color: lighten($cyan, 20%);;
 }
 
-.block-private-message-notification-block{
+.block-private-message-notification-block {
   margin-right: 20px;
 }
-
 
 
 /**
@@ -421,61 +443,61 @@ p.username{
 }
 
 
-fieldset.js-form-item label{
+fieldset.js-form-item label {
   @extend h3;
 }
 
-.field--label-above .field__label{
+.field--label-above .field__label {
   @extend h3;
 }
 
-.field--type-comment{
+.field--type-comment {
   margin-top: 40px;
 }
 
-.field--name-field-competences, .field--name-field-showcase, .field--name-field-autobiography{
+.field--name-field-competences, .field--name-field-showcase, .field--name-field-autobiography {
   padding: 2rem 1rem;
   margin-bottom: 2rem;
   background-color: #e9ecef;
   border-radius: .3rem;
 }
 
-.image-style-avatar{
+.image-style-avatar {
   height: 100px !important;
   width: 100px !important;
   max-width: 100px !important;
   object-fit: cover;
 }
 
-.views-field-field-first-name{
+.views-field-field-first-name {
   @extend h5;
   margin-bottom: 10px;
 }
 
 
-.view-group-mem  .item-list ul li{
+.view-group-mem .item-list ul li {
   margin-top: 10px;
   padding: 0 0 0;
 
 }
 
-nav.e_portfolio{
+nav.e_portfolio {
   background-color: $gray-600;
   margin-bottom: 30px;
 }
 
-li.nav-item.active a{
+li.nav-item.active a {
   color: lighten($teal, 10%) !important;
 }
 
 
-.text-formatted.field a{
+.text-formatted.field a {
   color: $cyan;
   text-decoration: underline
 }
 
 
-.text-formatted.field a:hover{
+.text-formatted.field a:hover {
   color: darken($cyan, 10);
 }
 
@@ -492,31 +514,32 @@ li.nav-item.active a{
   margin-top: 5px;
 }
 
-.field--name-user-picture{
+.field--name-user-picture {
   margin: 0 1em 0 0;
 
 }
-#mainNav{
+
+#mainNav {
   z-index: 100 !important;
 }
 
-.statistics-counter.nav-link{
+.statistics-counter.nav-link {
   visibility: hidden;
 }
 
-#pm-members-autocomplete-results-wrapper{
+#pm-members-autocomplete-results-wrapper {
   z-index: 20;
 }
 
-.btn-primary a{
+.btn-primary a {
   color: #ffffff;
 }
 
-#block-addanswerblock{
+#block-addanswerblock {
   margin-bottom: 30px;
 }
 
-td.bg-success a{
+td.bg-success a {
   color: white;
 }
 
@@ -534,7 +557,7 @@ td.bg-success a{
 .custom-switch .custom-control-label::before {
   left: -2.25rem;
   height: 2rem;
-  width: 3.5rem;    // it was 1.75rem before. Sliding way is longer than before.
+  width: 3.5rem; // it was 1.75rem before. Sliding way is longer than before.
   pointer-events: all;
   border-radius: 1rem;
 }
@@ -542,14 +565,15 @@ td.bg-success a{
 .custom-switch .custom-control-label::after {
   top: calc(0.25rem + 2px);
   left: calc(-2.25rem + 2px);
-  width: calc(2rem - 4px);   // it was calc(1rem - 4px) before. Oval is bigger than before.
-  height: calc(2rem - 4px);  // it was calc(1rem - 4px) before. Oval is bigger than before.
+  width: calc(2rem - 4px); // it was calc(1rem - 4px) before. Oval is bigger than before.
+  height: calc(2rem - 4px); // it was calc(1rem - 4px) before. Oval is bigger than before.
   background-color: #adb5bd;
   border-radius: 2rem; //   it was 0.5rem before. Oval is bigger than before.
   transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-transform 0.15s ease-in-out;
   transition: transform 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   transition: transform 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-transform 0.15s ease-in-out;
 }
+
 @media (prefers-reduced-motion: reduce) {
   .custom-switch .custom-control-label::after {
     transition: none;
@@ -575,9 +599,17 @@ td.bg-success a{
   position: relative;
 }
 
-.node-readmore.nav-link{
+.node-readmore.nav-link {
   margin-top: 10px;
   cursor: pointer;
   @extend .btn;
-  @extend .btn-primary
+  @extend .btn-primary;
+}
+
+.field--type-enrope-group-join-leave {
+  margin-bottom: 30px;
+}
+
+.item-list p {
+  margin: 15px 0
 }
