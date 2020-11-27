@@ -131,7 +131,6 @@ function enrope_theme_suggestions_alter(array &$suggestions, array $variables, $
   }
 }
 
-
 /**
  * Implements hook_theme_suggestions_page_alter().
  */
@@ -147,9 +146,11 @@ function enrope_theme_suggestions_page_alter(array &$suggestions, array $variabl
  */
 function enrope_theme_suggestions_views_view_list_alter(array &$suggestions, array $variables)
 {
+
   if ($variables['view']->id() === 'group_mem') {
     $suggestions[] = 'views_view_list__group_mem';
   }
+
 }
 
 
@@ -159,7 +160,6 @@ function enrope_theme_suggestions_views_view_list_alter(array &$suggestions, arr
 //function enrope_theme_suggestions_views_view_alter(array &$suggestions, array $variables) {
 //  $suggestions[] = sprintf('views_view__%s', $variables['view']->id());
 //}
-//
 
 
 /**
@@ -194,3 +194,39 @@ function enrope_preprocess_node(&$variables)
 
 }
 
+function enrope_preprocess(&$variables, $hook)
+{
+  $variables['base_path'] = base_path();
+}
+
+
+/**
+ * Implements HOOK_preprocess_entity_print__entity().
+ */
+function enrope_preprocess_entity_print(&$variables)
+{
+  $route = \Drupal::routeMatch();
+  $entity_type = $route->getParameter('entity_type');
+  $entity_id = $route->getParameter('entity_id');
+  if ($entity_type == 'node') {
+    $node = \Drupal::entityTypeManager()->getStorage('node')->load($entity_id);
+
+    $author = $node->getOwner()->id();
+
+    $database = \Drupal::database();
+    $query = $database->select('node_field_data', 'n');
+    $query->fields('n', array('nid'));
+    $query->condition('n.uid', $author);
+    $query->condition('n.type', 'e_portfolio');
+    $result = $query->execute()->fetchAll();
+
+    if (!empty($result)) {
+      $node = \Drupal\node\Entity\Node::load($result[0]->nid);
+      $portfolio_title = $node->getTitle();
+
+      $variables['portfolio_title'] = $portfolio_title;
+    }
+
+
+  }
+}
