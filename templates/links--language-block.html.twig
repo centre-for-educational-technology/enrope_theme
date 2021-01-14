@@ -41,7 +41,7 @@
     <div class="dropdown language">
       {# show selected language in button and other languages in drop down #}
       <button class="btn language btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
-              aria-expanded="false">{{ links['activeLink'].text }}</button>
+              aria-expanded="false"><i class="fa fa-globe"></i> {{ links['activeLink'].text }}</button>
       <ul class="dropdown-menu">
         {% for key, item in links %}
           {% if key is not same as("activeLink") %}
