@@ -230,3 +230,29 @@ function enrope_preprocess_entity_print(&$variables)
 
   }
 }
+
+
+function enrope_preprocess_links__language_block(&$variables) {
+  $currentLanguageCode = \Drupal::languageManager()
+    ->getCurrentLanguage()
+    ->getId();
+  // replace key of active language with 'activeLink'
+  foreach ($variables['links'] as $i => $link) {
+    /** @var \Drupal\language\Entity\ConfigurableLanguage $linkLanguage */
+    $linkLanguage = $link['link']['#options']['language'];
+    if ($currentLanguageCode == $linkLanguage->get('id')) {
+      $variables['links']['activeLink'] = $link;
+      unset($variables['links'][$i]);
+    }
+  }
+  // if there is only 2 languages remove active one
+  if (sizeof($variables['links']) == 2) {
+    unset($variables['links']['activeLink']);
+    // give class 'btn btn-primary' to alternate language
+    /** @var \Drupal\Core\Url $alternate */
+    $alternate = current($variables['links']);
+    $alternate['link']['#options']['attributes']['class'][] = 'btn';
+    $alternate['link']['#options']['attributes']['class'][] = 'btn-primary';
+    $variables['links'] = [$alternate];
+  }
+}

@@ -836,4 +836,13 @@ td.bg-success a {
 .item-list p {
   margin: 15px 0; }
 
+.btn.language, .private_message_thread_delete_link_wrapper a.language, .language#load-previous-messages, .language#load-previous-threads-button, .language.node-readmore.nav-link {
+  padding: .375rem .75rem;
+  border-radius: .25rem;
+  font-weight: 400; }
+
+.dropdown.language {
+  margin-right: 20px;
+  margin-bottom: 10px; }
+
 /*# sourceMappingURL=style.css.map */

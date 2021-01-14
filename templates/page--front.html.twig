@@ -12,67 +12,72 @@
 
 <!-- Page Header -->
 <header class="masthead">
-    <canvas class="background"></canvas>
+  <canvas class="background"></canvas>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-10 col-md-10 mx-auto">
-                <div class="site-heading">
-                    <img src="{{ base_path ~ directory }}/img/enrope.svg" style="height: 200px">
-                    <h1>ENROPE</h1>
-                    <span class="subheading">European Network for Junior Researchers in the Field of Plurilingualism and Education</span>
-                </div>
-            </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 col-md-10 mx-auto">
+        <div class="site-heading">
+          <img src="{{ base_path ~ directory }}/img/enrope.svg" style="height: 200px">
+          <h1>ENROPE</h1>
+          <span
+            class="subheading">
+            {{ "European Network for Junior Researchers in the Field of Plurilingualism and Education
+              "|t }}
+          </span>
         </div>
+      </div>
     </div>
+  </div>
 </header>
 
-{#<!-- Main Content -->#}
-{#{% block content %}#}
-    {#<div id="main" class="{{ container }}">#}
-        {#{{ page.breadcrumb }}#}
-        {#<div class="row row-offcanvas row-offcanvas-left clearfix">#}
-            {#<main{{ content_attributes }}>#}
-                {#<section class="section">#}
-                    {#<a id="main-content" tabindex="-1"></a>#}
-                    {#{{ page.content }}#}
-                {#</section>#}
-            {#</main>#}
-            {#{% if page.sidebar_first %}#}
-                {#<div{{ sidebar_first_attributes }}>#}
-                    {#<aside class="section" role="complementary">#}
-                        {#{{ page.sidebar_first }}#}
-                    {#</aside>#}
-                {#</div>#}
-            {#{% endif %}#}
-            {#{% if page.sidebar_second %}#}
-                {#<div{{ sidebar_second_attributes }}>#}
-                    {#<aside class="section" role="complementary">#}
-                        {#{{ page.sidebar_second }}#}
-                    {#</aside>#}
-                {#</div>#}
-            {#{% endif %}#}
-        {#</div>#}
-    {#</div>#}
-{#{% endblock %}#}
+{# <!-- Main Content --> #}
+{# {% block content %} #}
+{# <div id="main" class="{{ container }}"> #}
+{# {{ page.breadcrumb }} #}
+{# <div class="row row-offcanvas row-offcanvas-left clearfix"> #}
+{# <main{{ content_attributes }}> #}
+{# <section class="section"> #}
+{# <a id="main-content" tabindex="-1"></a> #}
+{# {{ page.content }} #}
+{# </section> #}
+{# </main> #}
+{# {% if page.sidebar_first %} #}
+{# <div{{ sidebar_first_attributes }}> #}
+{# <aside class="section" role="complementary"> #}
+{# {{ page.sidebar_first }} #}
+{# </aside> #}
+{# </div> #}
+{# {% endif %} #}
+{# {% if page.sidebar_second %} #}
+{# <div{{ sidebar_second_attributes }}> #}
+{# <aside class="section" role="complementary"> #}
+{# {{ page.sidebar_second }} #}
+{# </aside> #}
+{# </div> #}
+{# {% endif %} #}
+{# </div> #}
+{# </div> #}
+{# {% endblock %} #}
 
 
 <div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
             <span class="subheading-about">
+              {{ "
               ENROPE is an international, cooperative project aiming to provide high-quality qualification and networking structures for junior researchers in the field of language education and plurilingualism. The project was developed from within the LANGSCAPE network. ENROPE operates at the interface of language education research, language teaching and professional development in order to develop more plurilingual mind-sets and practices. As part of its aim to foster strong and reflected professional identities, ENROPE offers an Intensive Study Programme (ISP) which provides junior researchers with opportunities for transborder collaboration and professional qualification. The ISP consists of three annual study weeks, linked and enhanced through regular online study phases. A versatile Online Platform serves as central hub of the wide and diverse network that ENROPE is building up. The platform offers spaces and tools for international and field-specific collaboration, e.g. an E-Portfolio as a means to engage in meaningful professional self-reflection. A Qualification Handbook allows for wide adaption and dissemination of the project's key concepts, products and training activities.
+              "|t }}
             </span>
-          {#{{ page.content }}#}
-        </div>
+      {# {{ page.content }} #}
     </div>
+  </div>
 </div>
 
 <hr>
 
 <!-- Footer -->
 {% include '@enrope/parts/footer.html.twig' %}
-
 
 
 </body>
