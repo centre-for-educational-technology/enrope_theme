@@ -842,7 +842,9 @@ td.bg-success a {
   font-weight: 400; }
 
 .dropdown.language {
-  margin-right: 20px;
-  margin-bottom: 10px; }
+  margin-right: 20px; }
+
+.block-private-message-notification-block {
+  margin-top: 10px; }
 
 /*# sourceMappingURL=style.css.map */
