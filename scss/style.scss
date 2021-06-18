@@ -614,16 +614,33 @@ td.bg-success a {
   margin: 15px 0
 }
 
-.btn.language{
+.btn.language {
   padding: .375rem .75rem;
   border-radius: .25rem;
   font-weight: 400;
 }
 
-.dropdown.language{
+.dropdown.language {
   margin-right: 20px;
 }
 
-.block-private-message-notification-block{
+.block-private-message-notification-block {
   margin-top: 10px;
+}
+
+
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu > .dropdown-menu {
+  top: 0;
+  left: 10rem; /* 10rem is the min-width of dropdown-menu */
+  margin-top: 0px;
+}
+
+/* rotate caret on hover */
+.dropdown-menu > li > a:hover:after {
+  text-decoration: underline;
+  transform: rotate(-90deg);
 }
