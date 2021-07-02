@@ -1,0 +1,47 @@
+<div class="card">
+  <div class="card-body text-center">
+
+    <a href="{{ path('entity.user.canonical', {'user': user.id}) }}">
+
+      <div class="views-field views-field-field-first-name">
+        <div class="field-content">
+
+          {{ user.field_first_name.value }}
+
+        </div>
+      </div>
+
+
+      <div class="views-field views-field-user-picture">
+        <div class="field-content">
+          {% if (user.user_picture.entity.fileuri != NULL) %}
+            <img src="{{ file_url(user.user_picture.entity.fileuri) }}"
+                 class="img-thumbnail image-style-avatar rounded-circle">
+          {% else %}
+            <img src="{{ url('<front>') }}/{{ directory }}/img/user.png"
+                 class="img-thumbnail image-style-avatar rounded-circle">
+          {% endif %}
+
+        </div>
+      </div>
+    </a>
+
+    {% if ( 'moderator' in user.getroles(TRUE) or 'administrator' in user.getroles(TRUE)) %}
+      <div class="badge badge-primary text-wrap">
+        {{ 'Project partner'|t }}
+      </div>
+    {% else %}
+      <div class="badge badge-success text-wrap">
+        {{ 'Member'|t }}
+      </div>
+    {% endif %}
+
+    <hr/>
+
+    <h6>{{ 'Research interests/Fields'|t }}</h6>
+    <p class="text-muted m-0">{{ user.field_research_interests_fields.value }}</p>
+
+
+  </div>
+</div>
+
