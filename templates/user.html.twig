@@ -16,11 +16,11 @@
  * @see template_preprocess_user()
  */
 #}
-{#<article{{ attributes.addClass('profile') }}>#}
-{#    {% if content %}#}
-{#        {{- content -}}#}
-{#    {% endif %}#}
-{#</article>#}
+{# <article{{ attributes.addClass('profile') }}> #}
+{# {% if content %} #}
+{# {{- content -}} #}
+{# {% endif %} #}
+{# </article> #}
 
 
 <article{{ attributes.addClass('profile') }}>
@@ -38,9 +38,22 @@
                 <a href="mailto:{{ user.email }}">{{ user.email }}</a>
             </p>
 
+            {% if current_user !=  user.id %}
+                <div class="row justify-content-center mb-16">
+                    {% if follow_button.type ==  'follow' %}
+
+                        <a class="btn btn-success"
+                           href="{{ path('enrope_follow_user.follow',{'user':  current_user, 'user_to_follow': user.id }) }}">{{ 'Follow'|t }}</a>
+                    {% elseif follow_button.type ==  'unfollow' %}
+                        <a class="btn btn-danger"
+                           href="{{ path('enrope_follow_user.unfollow',{'user':  current_user, 'user_to_unfollow': user.id }) }}">{{ 'Unfollow'|t }}</a>
+                    {% endif %}
+                </div>
+            {% endif %}
+
             <ul class="list-group list-group-flush">
 
-                    {{ content }}
+                {{ content }}
 
             </ul>
 

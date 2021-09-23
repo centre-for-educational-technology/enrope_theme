@@ -22,20 +22,20 @@ use Drupal\Core\Template\Attribute;
 function enrope_form_system_theme_settings_alter(&$form, FormStateInterface $form_state)
 {
   $form['components']['navbar']['bootstrap_barrio_navbar_top_background']['#options'] = array(
-    'bg-primary' => t('Primary'),
-    'bg-secondary' => t('Secondary'),
-    'bg-light' => t('Light'),
-    'bg-dark' => t('Dark'),
-    'bg-white' => t('White'),
-    'bg-transparent' => t('Transparent'),
+      'bg-primary' => t('Primary'),
+      'bg-secondary' => t('Secondary'),
+      'bg-light' => t('Light'),
+      'bg-dark' => t('Dark'),
+      'bg-white' => t('White'),
+      'bg-transparent' => t('Transparent'),
   );
   $form['components']['navbar']['bootstrap_barrio_navbar_background']['#options'] = array(
-    'bg-primary' => t('Primary'),
-    'bg-secondary' => t('Secondary'),
-    'bg-light' => t('Light'),
-    'bg-dark' => t('Dark'),
-    'bg-white' => t('White'),
-    'bg-transparent' => t('Transparent'),
+      'bg-primary' => t('Primary'),
+      'bg-secondary' => t('Secondary'),
+      'bg-light' => t('Light'),
+      'bg-dark' => t('Dark'),
+      'bg-white' => t('White'),
+      'bg-transparent' => t('Transparent'),
   );
 }
 
@@ -232,10 +232,11 @@ function enrope_preprocess_entity_print(&$variables)
 }
 
 
-function enrope_preprocess_links__language_block(&$variables) {
+function enrope_preprocess_links__language_block(&$variables)
+{
   $currentLanguageCode = \Drupal::languageManager()
-    ->getCurrentLanguage()
-    ->getId();
+      ->getCurrentLanguage()
+      ->getId();
   // replace key of active language with 'activeLink'
   foreach ($variables['links'] as $i => $link) {
     /** @var \Drupal\language\Entity\ConfigurableLanguage $linkLanguage */
@@ -255,4 +256,33 @@ function enrope_preprocess_links__language_block(&$variables) {
     $alternate['link']['#options']['attributes']['class'][] = 'btn-primary';
     $variables['links'] = [$alternate];
   }
+}
+
+
+function enrope_preprocess_user(&$variables)
+{
+
+  $currentUser = \Drupal::currentUser()->id();
+
+  $connection = \Drupal::service('database');
+
+  $user_following = $connection->select('enrope_follow_user_data')
+      ->fields('enrope_follow_user_data', ['following_uid'])
+      ->condition('uid', $currentUser)
+      ->execute()
+      ->fetchCol();
+
+  if (in_array($variables['user']->id(), $user_following)) {
+    $follow_button = ['type' => 'unfollow', 'value' => t('Unfollow')];
+  } else {
+    $follow_button = ['type' => 'follow', 'value' => t('Follow')];
+  }
+
+
+  $variables['follow_button'] = $follow_button;
+
+  $variables['current_user'] = $currentUser;
+  $variables['#cache']['contexts'][] = 'user';
+
+  $variables['#cache']['max-age'] = 0;
 }
